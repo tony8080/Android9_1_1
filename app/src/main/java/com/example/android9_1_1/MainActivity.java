@@ -24,8 +24,10 @@ public class MainActivity extends AppCompatActivity {
                 AlertDialog.Builder dialog = new AlertDialog.Builder( MainActivity.this );
 
                 dialog.setTitle("Alart Dialog OK");
-                dialog.setMessage("OKボタンをクリック");
+                dialog.setMessage("ボタンをクリック");
 //              dialog.setIcon( R.drawable.ic_launcher );
+
+                //  Positiveボタン
                 dialog.setPositiveButton("OK", new DialogInterface.OnClickListener()
                 {
                     @Override
@@ -35,6 +37,27 @@ public class MainActivity extends AppCompatActivity {
                         textView.setText("OK Click");
                     }
                 });
+                //  Neutralボタン
+                dialog.setNeutralButton("NEUTRAL", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick( DialogInterface dialog, int which )
+                    {
+                        TextView textView = ( TextView )findViewById( R.id.textView );
+                        textView.setText("NEUTRAL Click");
+                    }
+                });
+                //  Negativeボタン
+                dialog.setNegativeButton("NG", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick( DialogInterface dialog, int which )
+                    {
+                        TextView textView = ( TextView )findViewById( R.id.textView );
+                        textView.setText("NG Click");
+                    }
+                });
+
                 dialog.show();
             }
         });
